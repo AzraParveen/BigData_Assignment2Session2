@@ -1,0 +1,24 @@
+Hadoop cluster>
+A Hadoop cluster is a special type of computational cluster designed specifically for storing and
+analyzing huge amounts of unstructured data in a distributed computing environment. 
+
+Hadoop clusters are comprised of three different node types:
+>master node
+>slave node
+>client node
+
+Understanding the different node types will help us plan our cluster, and configure the appropriate
+number and type of nodes when creating a cluster.
+
+-Master nodes oversee the following key operations that comprise Hadoop: 
+storing data in the Hadoop Distributed File System (HDFS) and running parallel computations on that data using MapReduce.
+The NameNode coordinates the data storage function (with the HDFS), while the JobTracker oversees and coordinates the parallel
+processing of data using MapReduce.
+
+-Slave nodes make up the majority of virtual machines and perform the job of storing the data and running computations.
+Each worker node runs both a DataNode and TaskTracker service that communicates with, and receives instructions from their
+master nodes. The TaskTracker service is subordinate to the JobTracker, and the DataNode service is subordinate to the NameNode.
+
+-Client nodes have Hadoop installed with all the cluster settings, but are neither master or worker nodes. Instead, the client 
+node loads data into the cluster, submits MapReduce jobs describing how that data should be processed, and then retrieves or
+views the results of the job when processing is finished.
